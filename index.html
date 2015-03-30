@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cojaxify Demo</title>
+    <link rel="stylesheet" href="cojaxify/style.css">
+    <script src="vendor/jquery.js" type="text/javascript"></script>
+    <script src="cojaxify/cojaxify.js" type="text/javascript"></script>
+    <script src="vendor/vkbeautify.0.99.js"></script>
+</head>
+
+<body>
+    <a href="#" data-cojaxify data-url="sampledata/books.html" data-target="DivCenter">1. all content from books.html</a>
+    <a href="#" data-cojaxify data-url="sampledata/books.html" data-target="DivCenter" data-section="p">2. all P tag from books.html</a>
+    <a href="#" data-cojaxify data-url="sampledata/books.html" data-target="DivCenter" data-section=".mydiv">3 . load .mydiv from books.html</a>
+    <a href="#" data-cojaxify data-url="sampledata/books.html" data-target="DivCenter" data-type="text" data-section=".mydiv">4 . Load Text  from books.html</a>
+    <a href="#" data-cojaxify data-url="sampledata/pagesadasd.html" data-target="DivCenter" data-type="text">5 . Invalid Link</a>
+    <a href="#" data-cojaxify data-url="sampledata/books.html" data-target="DivCenter" data-type="html" data-script="showalert">6 . Load data with Dynamic Script call</a>
+    <br/>
+    <a href="#" data-cojaxify data-url="sampledata/books.xml" data-target="DivCenter" data-type="xml">7 . Load xml  from books.xml</a>
+    <a href="#" data-cojaxify data-url="sampledata/books.json" data-target="DivCenter" data-type="json">8 . Load json from books.json</a>
+    <br/>
+    <a href="#" data-cojaxify data-url="sampledata/books.html" data-target="DivCenter" data-type="html" data-animation="fade">9 . Load data with Animation | fadeIn</a>
+    <a href="#" data-cojaxify data-url="sampledata/books.html" data-target="DivCenter" data-type="html" data-animation="fade" data-speed="5000">10 . Load data with Animation | fadeIn & speed : slow </a>
+    <a href="#" data-cojaxify data-url="sampledata/books.html" data-target="DivCenter" data-type="html" data-animation="slide">11 . Load data with Animation | slide</a>
+    <br/>
+    <a href="#" data-cojaxify data-url="http://w3schools.com/xml/simple.xml" data-target="DivCenter" data-type="xml">12 . Load xml from another domain</a>
+    <a href="#" data-cojaxify data-url="http://cs.usu.edu.ru/home/Rast1234/data/dummy.html" data-target="DivCenter" data-type="html">13 . Load html from another domain</a>
+    <a href="#" data-cojaxify data-url="http://jsonplaceholder.typicode.com/posts/1" data-target="DivCenter" data-type="json">14 . Load json from another domain</a>
+
+    <br/>
+        <div class="boxStyle">
+        OPTIONS:
+        <textarea disabled class="fullText" style="height: 160px;padding: 8px 0;">
+	data-cojaxify			: [REQUIRED] include this attribute in any anchor tag to load data from ajax
+	data-url			: [REQUIRED]  URL or link from where we need to load content
+						Eg : sampledata/books.html , http://w3schools.com/xml/simple.xml , sampledata/books.json
+	data-target			: [REQUIRED]  ID of container where we need to load content
+	data-type			: [OPTIONAL] type of content to load. Eg. : xml , json , html    	
+	data-section			: [OPTIONAL] in case of xml or html , mention this to load perticular part from ajax loaded content
+	data-script			: [OPTIONAL] Callback script incase of successful ajax call.
+	data-animation			: [OPTIONAL] aniamte target . Possible values : fade | slide
+	data-speed			: [OPTIONAL] animation speed. Possible values in milliseconds. Possible values : 1000 , 2000 , slow , fast
+		</textarea>
+    </div>
+    <br/>
+    <div id="DivCenter" class="boxStyle">Content Will be loaded here</div>
+
+</body>
+<script type="text/javascript">
+function showalert(returnData) {
+    alert("Hey! cojaxify just called Dynamic function!!! Check console for more info.");
+    console.log("from dynamic function : ", returnData);
+}
+</script>
+
+</html>
