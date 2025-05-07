@@ -1,10 +1,5 @@
 
 
-#DEMO
-	http://www.logical-brains.com/projects/jquery.cojaxify
-
-    
-
 #OPTIONS:
  	data-cojaxify		: [REQUIRED] include this attribute in any anchor tag to load data from ajax
 	data-url			: [REQUIRED]  URL or link from where we need to load content
